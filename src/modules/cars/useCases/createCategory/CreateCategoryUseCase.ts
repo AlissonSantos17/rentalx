@@ -1,4 +1,5 @@
-/* eslint-disable prettier/prettier */
+import { inject, injectable } from "tsyringe";
+
 import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IRequest {
@@ -6,12 +7,18 @@ interface IRequest {
   description: string;
 }
 
+@injectable()
 class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) { }
+  constructor(
+    @inject("CategoriesRepository")
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
-  execute({ name, description }: IRequest): void {
-    const categoryAlreadExists = this.categoriesRepository.findByName(name);
-
+  async execute({ name, description }: IRequest): Promise<void> {
+    const categoryAlreadExists = await this.categoriesRepository.findByName(
+      name
+    );
+    console.log(categoryAlreadExists);
     if (categoryAlreadExists) {
       throw new Error("Category already exists!");
     }
@@ -21,4 +28,3 @@ class CreateCategoryUseCase {
 }
 
 export { CreateCategoryUseCase };
-
