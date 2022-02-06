@@ -13,8 +13,6 @@ services:
       - POSTGRES_DB=rental-cars
     volumes:
       - pgdata:/data/postgres
-    # networks:
-    #   - my-bridge-network
 
   app:
     build: .
@@ -24,16 +22,10 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
-    # networks:
-    #   - my-bridge-network
     links:
       - database
     depends_on:
       - database
-
-# networks:
-#   my-bridge-network:
-#     driver: bridge
 
 volumes:
   pgdata:
