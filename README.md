@@ -1,98 +1,57 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Rentalx" />
+# Cadastro de carro
 
-  &#xa0;
+**RF** => Requisitos funcionais
+Deve ser possivel cadastrar um novo carro.
+Deve ser possível listar todas as categorias.
 
-  <!-- <a href="https://rentalx.netlify.app">Demo</a> -->
-</div>
+**RN** => Regra de negocio
+Não deve ser possível cadastrar um carro com uma placa já existente.
+Não deve ser possível alterar a placa de um carro já cadastrado.
+O carro deve ser cadastrado, por padrão, com disponibilidade.
+O usúario responsável pelo cadastro deve ser um usúario administrador.
 
-<h1 align="center">Rentalx</h1>
+# Listagem de carros
 
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8">
+**RF**
+Deve ser possível listar todos os carros disponíveis.
+Deve ser possível listar todos os carros disponíveis pelo nome da categoria.
+Deve ser possível listar todos os carros disponíveis pelo nome da marca.
+Deve ser possível listar todos os carros disponíveis pelo nome do carro.
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8">
+**RN**
+O usúario não precisar estar logado no sistema.
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8">
+# Cadastro de Especificações no carro
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8">
+**RF**
+Deve ser possível cadastrar uma especificação para um carro.
+Deve ser possível listar todas as especificações.
+Deve ser possível listar todos os carros.
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8" /> -->
+**RN**
+Não deve ser possivel cadastrar uma especificação para um carro não cadastrado.
+Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
+O usúario responsável pelo cadastro deve ser um usúario administrador.
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8" /> -->
+# Cadastro de imagens do carro
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/rentalx?color=56BEB8" /> -->
-</p>
+**RF**
+Deve ser possível cadastrar uma imagem do carro.
+Deve ser possível listar todos os carros.
 
-<!-- Status -->
+**RNF**
+Utilizar o multer para upload dos arquivos.
 
-<!-- <h4 align="center"> 
-	🚧  Rentalx 🚀 Under construction...  🚧
-</h4> 
+**RN**
+O usúario deve poder cadastrar mais de uma imagem para o mesmo carro.
+O usúario responsável pelo cadastro deve ser um usúario administrador.
 
-<hr> -->
+# Alugel de carro
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
-</p>
+**RF**
+Deve ser possível cadastrar um alugel
 
-<br>
-
-## :dart: About ##
-
-Describe your project
-
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-
-## :white_check_mark: Requirements ##
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## :checkered_flag: Starting ##
-
-```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/rentalx
-
-# Access
-$ cd rentalx
-
-# Install dependencies
-$ yarn
-
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
-```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
-
-&#xa0;
-
-<a href="#top">Back to top</a>
+**RN**
+O alugel deve ter duração mínima de 24 horas.
+Não deve ser possível cadastrar um novo alugel caso já exista um aberto para o mesmo usúario.
+Não deve ser possível cadastrar um novo alugel caso já exista um aberto para o mesmo carro.
